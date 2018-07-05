@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Sky
 //
-//  Created by SeacenLiu on 2018/7/5.
-//  Copyright © 2018年 成. All rights reserved.
+//  Created by Mars on 28/09/2017.
+//  Copyright © 2017 Mars. All rights reserved.
 //
 
 import UIKit
