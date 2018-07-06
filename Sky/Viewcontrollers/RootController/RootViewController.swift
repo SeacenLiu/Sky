@@ -24,6 +24,7 @@ class RootViewController: UIViewController {
             }
             
             destination.delegate = self
+            destination.viewModel = CurrentWeatherViewModel()
             currentWeatherViewController = destination
         default:
             break
@@ -51,7 +52,7 @@ class RootViewController: UIViewController {
             }
             else if let response = response {
                 // Notify CurrentWeatherViewController
-                self.currentWeatherViewController.now = response
+                self.currentWeatherViewController.viewModel?.weather = response
             }
         }
     }
@@ -69,7 +70,7 @@ class RootViewController: UIViewController {
                     name: city,
                     latitude: currentLocation.coordinate.latitude,
                     longitude: currentLocation.coordinate.longitude)
-                self.currentWeatherViewController.location = l
+                self.currentWeatherViewController.viewModel?.location = l
             }
         }
     }
