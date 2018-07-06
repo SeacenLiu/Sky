@@ -27,6 +27,7 @@ class WeatherDataManagerTest: XCTestCase {
         super.tearDown()
     }
     
+    // MARK: - 测试是否有调用某个方法 - 以URLSessionDataTask的resume()为例
     func test_weatherDataAt_start_the_session() {
         let dataTask = MockURLSessionDataTask()
         session.sessionDataTask = dataTask
@@ -36,6 +37,7 @@ class WeatherDataManagerTest: XCTestCase {
         XCTAssert(session.sessionDataTask.isResumeCalled)
     }
 
+    // MARK: - 使用 XCTestExpectation 设置等待期望时间测试异步代码
     func test_weatherDataAt_gets_data() {
         let expect = expectation(description: "Loading data form \(API.authenticatedURL)")
         var data: WeatherData? = nil
@@ -49,6 +51,7 @@ class WeatherDataManagerTest: XCTestCase {
         XCTAssertNotNil(data)
     }
     
+    // MARK: - 使用 Mock 方式串行化异步执行的代码
     func test_weatherDataAt_handle_invalid_request() {
         session.responseError = NSError(
             domain: "Invalid Request",
