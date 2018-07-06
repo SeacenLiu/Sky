@@ -21,4 +21,18 @@ class WeatherDataManagerTest: XCTestCase {
         super.tearDown()
     }
     
+    func test_weatherDataAt_start_the_session() {
+        let session = MockURLSession()
+        let dataTask = MockURLSessionDataTask()
+        
+        session.sessionDataTask = dataTask
+        
+        let manager = WeatherDataManager(
+            baseURL: URL(string: "https://darksky.net")!,
+            urlSession: session)
+        
+        manager.weatherDataAt(latitude: 52, longitude: 100) { (_, _) in}
+        
+        XCTAssert(session.sessionDataTask.isResumeCalled)
+    }
 }
