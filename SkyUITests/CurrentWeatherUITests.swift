@@ -17,6 +17,20 @@ class CurrentWeatherUITests: XCTestCase {
         
         continueAfterFailure = false
         
+        app.launchArguments += ["UI-TESTING"]
+        app.launchEnvironment["FakeJSON"] = """
+        {
+        "longitude" : 100,
+        "latitude" : 52,
+        "currently" : {
+        "temperature" : 23,
+        "humidity" : 0.91,
+        "icon" : "snow",
+        "time" : 1507180335,
+        "summary" : "Light Snow"
+        }
+        }
+        """
         app.launch()
     }
     
@@ -25,7 +39,7 @@ class CurrentWeatherUITests: XCTestCase {
         super.tearDown()
     }
     
-    func test_location_button_exists() {
+    func test_location_button_exists_withExpectation() {
         let locationBtn = app.buttons["LocationBtn"]
         let exists = NSPredicate(format: "exists == true")
 
@@ -35,6 +49,15 @@ class CurrentWeatherUITests: XCTestCase {
         waitForExpectations(timeout: 5, handler: nil)
         
         XCTAssert(locationBtn.exists)
+    }
+    
+    func test_location_button_exists() {
+        XCTAssert(app.buttons["LocationBtn"].exists)
+    }
+    
+    func test_current_weather_display() {
+        XCTAssert(app.images["snow"].exists)
+        XCTAssert(app.staticTexts["Light Snow"].exists)
     }
     
 }
