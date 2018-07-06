@@ -41,7 +41,7 @@ class CurrentWeatherViewController: WeatherViewController {
     func updateView() {
         activityIndicatorView.stopAnimating()
         
-        if let vm = viewModel, vm.isLocationReady == true {
+        if let vm = viewModel, vm.isUpdateReady == true {
             updateWeatherContainer(with: vm)
         }
         else {
