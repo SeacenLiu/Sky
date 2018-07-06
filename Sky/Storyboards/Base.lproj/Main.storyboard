@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYN-Rc-hal">
                                 <rect key="frame" x="0.0" y="20" width="375" height="254"/>
                                 <connections>
-                                    <segue destination="nyc-vj-DBh" kind="embed" id="adb-pS-zju"/>
+                                    <segue destination="nyc-vj-DBh" kind="embed" identifier="SegueCurrentWeather" id="adb-pS-zju"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEa-91-WFx">
@@ -105,7 +105,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9jb-Nb-pp4">
-                                        <rect key="frame" x="8" y="199" width="359" height="20"/>
+                                        <rect key="frame" x="168.5" y="199" width="38.5" height="20"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -142,11 +142,9 @@
                                     <constraint firstItem="bXZ-ZE-M2P" firstAttribute="centerY" secondItem="A9v-y6-mJK" secondAttribute="centerY" id="PIR-Sy-M5c"/>
                                     <constraint firstAttribute="trailing" secondItem="CVi-Gn-PJP" secondAttribute="trailing" constant="8" id="Pf8-iI-nxm"/>
                                     <constraint firstAttribute="trailing" secondItem="bXZ-ZE-M2P" secondAttribute="trailing" constant="8" id="UpK-YG-0K1"/>
-                                    <constraint firstAttribute="trailing" secondItem="9jb-Nb-pp4" secondAttribute="trailing" constant="8" id="aGu-JQ-cVI"/>
                                     <constraint firstItem="AY9-K4-ckZ" firstAttribute="top" secondItem="n0B-JD-LUd" secondAttribute="top" constant="8" id="aRY-7Y-35p"/>
                                     <constraint firstAttribute="trailing" secondItem="Oq1-dN-vfy" secondAttribute="trailing" constant="8" id="eVA-sC-a1e"/>
                                     <constraint firstItem="Oq1-dN-vfy" firstAttribute="top" secondItem="n0B-JD-LUd" secondAttribute="top" constant="8" id="izs-4t-FdY"/>
-                                    <constraint firstItem="9jb-Nb-pp4" firstAttribute="leading" secondItem="n0B-JD-LUd" secondAttribute="leading" constant="8" id="jU2-tf-ygt"/>
                                     <constraint firstItem="AY9-K4-ckZ" firstAttribute="leading" secondItem="n0B-JD-LUd" secondAttribute="leading" constant="8" id="mSZ-n0-RNQ"/>
                                     <constraint firstItem="bXZ-ZE-M2P" firstAttribute="leading" secondItem="A9v-y6-mJK" secondAttribute="trailing" constant="8" id="pvF-2R-bhB"/>
                                     <constraint firstItem="A9v-y6-mJK" firstAttribute="centerX" secondItem="n0B-JD-LUd" secondAttribute="centerX" id="qO1-CV-lu6"/>
@@ -161,7 +159,6 @@
                             <constraint firstItem="nHO-2e-ZPV" firstAttribute="centerX" secondItem="MR8-xd-gr6" secondAttribute="centerX" id="06H-HE-71X"/>
                             <constraint firstItem="02g-mF-0sU" firstAttribute="centerY" secondItem="MR8-xd-gr6" secondAttribute="centerY" id="N6d-wq-zEo"/>
                             <constraint firstItem="nHO-2e-ZPV" firstAttribute="centerY" secondItem="MR8-xd-gr6" secondAttribute="centerY" id="NS1-OE-Bj4"/>
-                            <constraint firstItem="cI8-3K-zvZ" firstAttribute="trailing" secondItem="nHO-2e-ZPV" secondAttribute="trailing" constant="8" id="Ot4-z7-Pt7"/>
                             <constraint firstItem="n0B-JD-LUd" firstAttribute="top" secondItem="MR8-xd-gr6" secondAttribute="top" id="TDH-1b-dSk"/>
                             <constraint firstItem="nHO-2e-ZPV" firstAttribute="leading" secondItem="cI8-3K-zvZ" secondAttribute="leading" constant="8" id="Vxt-XQ-H7w"/>
                             <constraint firstAttribute="trailing" secondItem="n0B-JD-LUd" secondAttribute="trailing" id="alg-TR-glL"/>
