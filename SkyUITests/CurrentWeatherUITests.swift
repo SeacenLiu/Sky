@@ -28,6 +28,17 @@ class CurrentWeatherUITests: XCTestCase {
         "icon" : "snow",
         "time" : 1507180335,
         "summary" : "Light Snow"
+        },
+        "daily": {
+        "data": [
+        {
+        "time": 1507180335,
+        "icon": "clear-day",
+        "temperatureLow": 66,
+        "temperatureHigh": 82,
+        "humidity": 0.25
+        }
+        ]
         }
         }
         """
