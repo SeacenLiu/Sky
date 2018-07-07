@@ -18,7 +18,7 @@ class WeekWeatherViewController: WeatherViewController {
         }
     }
     
-    private func updateView() {
+    func updateView() {
         activityIndicatorView.stopAnimating()
         
         if let _ = viewModel {
