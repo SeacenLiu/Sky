@@ -188,7 +188,7 @@
             </objects>
             <point key="canvasLocation" x="518" y="730"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Settings-->
         <scene sceneID="3D1-Kw-oyc">
             <objects>
                 <tableViewController id="Lcd-HW-PSX" customClass="SettingsViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
@@ -227,7 +227,7 @@
                             <outlet property="delegate" destination="Lcd-HW-PSX" id="kZu-KL-28y"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="kt7-Lg-vRU">
+                    <navigationItem key="navigationItem" title="Settings" id="kt7-Lg-vRU">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="done" id="nHR-Jk-tgU">
                             <connections>
                                 <segue destination="Uu2-Fk-5Cc" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="E5p-xO-yVl"/>
