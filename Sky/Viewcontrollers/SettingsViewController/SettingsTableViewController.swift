@@ -88,8 +88,7 @@ extension SettingsViewController {
         }
         
         if let vm = vm {
-            cell.accessoryType = vm.accessory
-            cell.label.text = vm.labelText
+            cell.configure(with: vm)
         }
         
         return cell
