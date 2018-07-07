@@ -71,21 +71,23 @@ extension SettingsViewController {
             fatalError("Unexpected section index")
         }
         
+        var vm: SettingsRepresentable?
+        
         switch section {
         case .date:
             guard let dateMode = DateMode(rawValue: indexPath.row) else {
                 fatalError("Invalide InedxPath")
             }
+            vm = SettingsDateViewModel(dateMode: dateMode)
             
-            let vm = SettingsDateViewModel(dateMode: dateMode)
-            cell.accessoryType = vm.accessory
-            cell.label.text = vm.labelText
         case .temperature:
             guard let temperatureMode = TemperatureMode(rawValue: indexPath.row) else {
                 fatalError("Invalide InedxPath")
             }
-            
-            let vm = SettingsTemperatureViewModel(temperatureMode: temperatureMode)
+            vm = SettingsTemperatureViewModel(temperatureMode: temperatureMode)
+        }
+        
+        if let vm = vm {
             cell.accessoryType = vm.accessory
             cell.label.text = vm.labelText
         }
