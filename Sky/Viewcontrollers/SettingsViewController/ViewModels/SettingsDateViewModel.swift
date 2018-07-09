@@ -8,12 +8,7 @@ struct SettingsDateViewModel {
     
     var labelText: String {
         let now = Date()
-        switch dateMode {
-        case .text:
-            dateFormatter.dateFormat = "E, dd MMMM"
-        case .digit:
-            dateFormatter.dateFormat = "EEEEE, MM/dd"
-        }
+        dateFormatter.dateFormat = dateMode.format
         return dateFormatter.string(from: now)
     }
     

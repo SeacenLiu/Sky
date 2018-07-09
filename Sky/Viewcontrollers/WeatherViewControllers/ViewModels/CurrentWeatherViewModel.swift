@@ -61,8 +61,8 @@ struct CurrentWeatherViewModel {
     
     var humidity: String {
         return String(
-            format: "%0.f %%",
-            weather.currently.humidity*100)
+            format: "%.1f %%",
+            weather.currently.humidity * 100)
     }
     
     var summary: String {
