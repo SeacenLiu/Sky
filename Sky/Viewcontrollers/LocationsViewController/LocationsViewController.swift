@@ -14,7 +14,7 @@ protocol LocationsViewControllerDelegate {
 }
 
 class LocationsViewController: UITableViewController {
-    private let segueAddLocationView = "SegueAddLocationView"
+    private let segueAddLocation = "SegueAddLocation"
     
     var delegate: LocationsViewControllerDelegate?
     
@@ -30,11 +30,26 @@ class LocationsViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    var viewModel: LocationsViewModel? {
-        didSet {
-            self.tableView.reloadData()
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+    
+        switch identifier {
+        case segueAddLocation:
+            let dest = segue.destination
+            if let addlocationViewController = dest as? AddLocationViewController {
+                addlocationViewController.delegate = self
+            }
+            else {
+                fatalError("Unexpected destination view controller.")
+            }
+        default:
+            break
         }
     }
+    
+    @IBAction func unwindToLocationsViewController(segue: UIStoryboardSegue) { }
+    
 }
 
 extension LocationsViewController {
@@ -164,6 +179,15 @@ extension LocationsViewController {
     }
 }
 
-extension LocationsViewController {
-    
+extension LocationsViewController: AddLocationViewControllerDelegate {
+    func controller(_ controller: AddLocationViewController, didAddLocation location: Location) {
+        // Update User Defaults
+        UserDefaults.addLocation(location)
+        
+        // Update Locations
+        favourites.append(location)
+        
+        // Update Table View
+        tableView.reloadData()
+    }
 }

@@ -329,11 +329,11 @@
 		14FEC84420F3804300E29D28 /* LocationsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				14FEC84520F3808800E29D28 /* AddLocationViewController.swift */,
+				14FEC84720F3809D00E29D28 /* LocationsViewController.swift */,
 				14FEC85120F3830F00E29D28 /* ViewModels */,
 				14FEC84C20F3812B00E29D28 /* Protocols */,
 				14FEC84920F3810600E29D28 /* TableViewCells */,
-				14FEC84520F3808800E29D28 /* AddLocationViewController.swift */,
-				14FEC84720F3809D00E29D28 /* LocationsViewController.swift */,
 			);
 			path = LocationsViewController;
 			sourceTree = "<group>";
@@ -809,10 +809,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9DJEBF62S3;
+				DEVELOPMENT_TEAM = 6426K9AWKV;
 				INFOPLIST_FILE = Sky/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Bx.Sky;
+				PRODUCT_BUNDLE_IDENTIFIER = cppteam.ios.Sky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -824,10 +824,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9DJEBF62S3;
+				DEVELOPMENT_TEAM = 6426K9AWKV;
 				INFOPLIST_FILE = Sky/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Bx.Sky;
+				PRODUCT_BUNDLE_IDENTIFIER = cppteam.ios.Sky;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
