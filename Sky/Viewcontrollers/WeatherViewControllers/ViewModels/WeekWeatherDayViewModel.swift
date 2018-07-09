@@ -44,9 +44,9 @@ struct WeekWeatherDayViewModel {
     private func format(temperature: Double) -> String {
         switch UserDefaults.temperatureMode() {
         case .fahrenheit:
-            return String(format: "%.1f °F", temperature)
+            return String(format: "%.0f °F", temperature)
         case .celsius:
-            return String(format: "%.1f °C", temperature.toCelsius())
+            return String(format: "%.0f °C", temperature.toCelsius())
         }
     }
 }
