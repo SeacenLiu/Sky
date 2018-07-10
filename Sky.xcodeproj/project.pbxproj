@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14E9F4F320F4A0A20091A1DF /* AddLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9F4F220F4A0A20091A1DF /* AddLocationViewModel.swift */; };
 		14FEC7DE20EE491300E29D28 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC7DD20EE491300E29D28 /* Configuration.swift */; };
 		14FEC7E120EE49D700E29D28 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC7E020EE49D700E29D28 /* Location.swift */; };
 		14FEC7E320EE4A2600E29D28 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC7E220EE4A2600E29D28 /* WeatherData.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14E9F4F220F4A0A20091A1DF /* AddLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewModel.swift; sourceTree = "<group>"; };
 		14FEC7DD20EE491300E29D28 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		14FEC7E020EE49D700E29D28 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		14FEC7E220EE4A2600E29D28 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				14FEC85220F3831D00E29D28 /* LocationsViewModel.swift */,
+				14E9F4F220F4A0A20091A1DF /* AddLocationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				14FEC81020F081FF00E29D28 /* WeekWeatherViewModel.swift in Sources */,
 				14FEC7F420EE551700E29D28 /* URLSessionDataTask.swift in Sources */,
 				14FEC84B20F3812100E29D28 /* LocationTableViewCell.swift in Sources */,
+				14E9F4F320F4A0A20091A1DF /* AddLocationViewModel.swift in Sources */,
 				14FEC7FF20EF588700E29D28 /* Double.swift in Sources */,
 				14FEC81C20F0A6B100E29D28 /* SettingsTableViewCell.swift in Sources */,
 				14FEC7F220EE54FB00E29D28 /* URLSessionDataTaskProtocol.swift in Sources */,

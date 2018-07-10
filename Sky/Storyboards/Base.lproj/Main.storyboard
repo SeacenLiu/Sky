@@ -299,7 +299,7 @@
             </objects>
             <point key="canvasLocation" x="2020" y="491"/>
         </scene>
-        <!--Add Location View Controller-->
+        <!--Add a location-->
         <scene sceneID="W28-9p-ane">
             <objects>
                 <tableViewController id="4gM-8K-ETe" customClass="AddLocationViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
@@ -347,7 +347,7 @@
                             <outlet property="delegate" destination="4gM-8K-ETe" id="9qH-af-p2r"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="PpV-BY-lLd">
+                    <navigationItem key="navigationItem" title="Add a location" id="PpV-BY-lLd">
                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Og6-uJ-bWy">
                             <connections>
                                 <segue destination="13N-NY-dBu" kind="unwind" unwindAction="unwindToLocationsViewControllerWithSegue:" id="4CO-QN-UfX"/>
