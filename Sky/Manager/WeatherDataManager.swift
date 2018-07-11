@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 internal class DarkSkyURLSession: URLSessionProtocol {
     func dataTask(
@@ -76,16 +78,20 @@ final class WeatherDataManager {
     
     typealias CompletionHandler = (WeatherData?, DataManagerError?) -> Void
     
-    func weatherDataAt(latitude: Double, longitude: Double, completion: @escaping CompletionHandler) {
-        let url = baseURL.appendingPathComponent("\(latitude),\(longitude)")
-        var request = URLRequest(url: url)
-        
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "GET"
-        
-        self.urlSession.dataTask(with: request) { (data, response, error) in
-            self.didFinishGettingWeatherData(data: data, response: response, error: error, completion: completion)
-        }.resume()
+    func weatherDataAt(latitude: Double, longitude: Double)
+        -> Observable<WeatherData> {
+            let url = baseURL.appendingPathComponent("\(latitude),\(longitude)")
+            var request = URLRequest(url: url)
+            
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpMethod = "GET"
+            
+            return (self.urlSession as! URLSession)
+                .rx.data(request: request).map {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .secondsSince1970
+                return try decoder.decode(WeatherData.self, from: $0)
+            }
     }
     
     func didFinishGettingWeatherData(data: Data?, response: URLResponse?, error: Error?, completion: CompletionHandler) {

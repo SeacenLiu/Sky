@@ -46,6 +46,11 @@ struct Location {
         
         self.init(name: name, latitude: latitude, longitude: longitude)
     }
+    
+    static let empty = Location(
+        name: "",
+        latitude: 0,
+        longitude: 0)
 }
 
 extension Location: Equatable {

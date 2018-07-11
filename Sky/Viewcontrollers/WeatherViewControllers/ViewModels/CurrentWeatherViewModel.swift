@@ -11,37 +11,13 @@ import UIKit
 private let formatter = DateFormatter()
 
 struct CurrentWeatherViewModel {
-    var isLocationReady = false
-    var isWeatherReady = false
+    var weather: WeatherData!
     
-    var isUpdateReady: Bool {
-        return isLocationReady && isWeatherReady
-    }
+    static let empty = CurrentWeatherViewModel(
+        weather: WeatherData.empty)
     
-    var location: Location! {
-        didSet {
-            if location != nil {
-                self.isLocationReady = true
-            }
-            else {
-                self.isLocationReady = false
-            }
-        }
-    }
-    
-    var weather: WeatherData! {
-        didSet {
-            if weather != nil {
-                self.isWeatherReady = true
-            }
-            else {
-                self.isWeatherReady = false
-            }
-        }
-    }
-    
-    var city: String {
-        return location.name
+    var isEmpty: Bool {
+        return self.weather == WeatherData.empty
     }
     
     var weatherIcon: UIImage {
@@ -69,7 +45,7 @@ struct CurrentWeatherViewModel {
         return weather.currently.summary
     }
     
-    var time: String {
+    var date: String {
         formatter.dateFormat = UserDefaults.dateMode().format
         
         return formatter.string(from: weather.currently.time)
