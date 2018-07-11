@@ -47,25 +47,32 @@ class CurrentWeatherViewController: WeatherViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Observable.combineLatest(locationVM, weatherVM) {
-            return ($0, $1)
-            }
-            .filter {
-                let (location, weather) = $0
-                return !(location.isEmpty) && !(weather.isEmpty)
-            }
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [unowned self] in
-                let (location, weather) = $0
-                
-                self.weatherContainerView.isHidden = false
-                self.locationLabel.text = location.city
-                
-                self.temperatureLabel.text = weather.temperature
-                self.weatherIcon.image = weather.weatherIcon
-                self.humidityLabel.text = weather.humidity
-                self.summaryLabel.text = weather.summary
-                self.dateLabel.text = weather.date
-            }).disposed(by: bag)
+        let viewModel =
+            Observable.combineLatest(locationVM, weatherVM) {
+                return ($0, $1)
+                }
+                .filter {
+                    let (location, weather) = $0
+                    return !(location.isEmpty) && !(weather.isEmpty)
+                }
+                .share(replay: 1, scope: .whileConnected)
+                .observeOn(MainScheduler.instance)
+        
+        viewModel.map { _ in false }
+            .bind(to: self.activityIndicatorView.rx.isAnimating)
+            .disposed(by: bag)
+        viewModel.map { _ in false }
+            .bind(to: self.weatherContainerView.rx.isHidden)
+            .disposed(by: bag)
+        viewModel.map { $0.0.city }
+            .bind(to: self.locationLabel.rx.text).disposed(by: bag)
+        viewModel.map { $0.1.temperature }
+            .bind(to: self.temperatureLabel.rx.text).disposed(by: bag)
+        viewModel.map { $0.1.humidity }
+            .bind(to: self.humidityLabel.rx.text).disposed(by: bag)
+        viewModel.map { $0.1.summary }
+            .bind(to: self.summaryLabel.rx.text).disposed(by: bag)
+        viewModel.map { $0.1.date }
+            .bind(to: self.dateLabel.rx.text).disposed(by: bag)
     }
 }
