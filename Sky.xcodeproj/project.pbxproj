@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		14E9F4F320F4A0A20091A1DF /* AddLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9F4F220F4A0A20091A1DF /* AddLocationViewModel.swift */; };
 		14E9F4F520F62C3A0091A1DF /* CurrentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9F4F420F62C3A0091A1DF /* CurrentLocationViewModel.swift */; };
+		14E9F4F720F741120091A1DF /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9F4F620F741120091A1DF /* CLLocationManager+Rx.swift */; };
 		14FEC7DE20EE491300E29D28 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC7DD20EE491300E29D28 /* Configuration.swift */; };
 		14FEC7E120EE49D700E29D28 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC7E020EE49D700E29D28 /* Location.swift */; };
 		14FEC7E320EE4A2600E29D28 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC7E220EE4A2600E29D28 /* WeatherData.swift */; };
@@ -83,6 +84,7 @@
 		020084A02CCACEB48E1607B2 /* Pods-SkyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyUITests/Pods-SkyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		14E9F4F220F4A0A20091A1DF /* AddLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewModel.swift; sourceTree = "<group>"; };
 		14E9F4F420F62C3A0091A1DF /* CurrentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModel.swift; sourceTree = "<group>"; };
+		14E9F4F620F741120091A1DF /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
 		14FEC7DD20EE491300E29D28 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		14FEC7E020EE49D700E29D28 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		14FEC7E220EE4A2600E29D28 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				14FEC80420EF99CA00E29D28 /* UIImage.swift */,
 				14FEC81120F0A32B00E29D28 /* UserDefaults.swift */,
 				14FEC85420F383D400E29D28 /* CLLocation.swift */,
+				14E9F4F620F741120091A1DF /* CLLocationManager+Rx.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				14FEC84820F3809D00E29D28 /* LocationsViewController.swift in Sources */,
 				14FEC80920F07A6E00E29D28 /* WeekWeatherViewController.swift in Sources */,
 				14FEC80E20F081B700E29D28 /* ForecastData.swift in Sources */,
+				14E9F4F720F741120091A1DF /* CLLocationManager+Rx.swift in Sources */,
 				14FEC80320EF98E400E29D28 /* CurrentWeatherViewModel.swift in Sources */,
 				14FEC81A20F0A6AB00E29D28 /* SettingsTableViewController.swift in Sources */,
 			);

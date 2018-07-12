@@ -133,10 +133,11 @@ class RootViewController: UIViewController {
     }()
     
     private func requestLocation() {
-        locationManager.delegate = self
-        
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            locationManager.requestLocation()
+            locationManager.startUpdatingLocation()
+            locationManager.rx.didUpdateLocations.take(1).subscribe(onNext: {
+                self.currentLocation = $0.first
+            }).disposed(by: bag)
         }
         else {
             locationManager.requestWhenInUseAuthorization()
@@ -162,27 +163,6 @@ class RootViewController: UIViewController {
             object: nil)
     }
 
-}
-
-extension RootViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            currentLocation = location
-            manager.delegate = nil
-            
-            manager.stopUpdatingLocation()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            manager.requestLocation()
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        dump(error)
-    }
 }
 
 extension RootViewController: CurrentWeatherViewControllerDelegate {
