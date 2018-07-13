@@ -20,6 +20,10 @@ struct CurrentWeatherViewModel {
         return self.weather == WeatherData.empty
     }
     
+    var isInvalid: Bool {
+        return self.weather == WeatherData.invalid
+    }
+    
     var weatherIcon: UIImage {
         return UIImage.weatherIcon(of: weather.currently.icon)!
     }
