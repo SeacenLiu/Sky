@@ -21,4 +21,8 @@ struct CurrentLocationViewModel {
     var isEmpty: Bool {
         return self.location == Location.empty
     }
+    
+    var isInvalid: Bool {
+        return self.location == Location.invalid
+    }
 }

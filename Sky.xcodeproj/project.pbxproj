@@ -10,6 +10,8 @@
 		14E9F4F320F4A0A20091A1DF /* AddLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9F4F220F4A0A20091A1DF /* AddLocationViewModel.swift */; };
 		14E9F4F520F62C3A0091A1DF /* CurrentLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9F4F420F62C3A0091A1DF /* CurrentLocationViewModel.swift */; };
 		14E9F4F720F741120091A1DF /* CLLocationManager+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9F4F620F741120091A1DF /* CLLocationManager+Rx.swift */; };
+		14E9F4F920F889520091A1DF /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9F4F820F889520091A1DF /* Date.swift */; };
+		14E9F4FD20F8D2C90091A1DF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E9F4FC20F8D2C90091A1DF /* UIViewController.swift */; };
 		14FEC7DE20EE491300E29D28 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC7DD20EE491300E29D28 /* Configuration.swift */; };
 		14FEC7E120EE49D700E29D28 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC7E020EE49D700E29D28 /* Location.swift */; };
 		14FEC7E320EE4A2600E29D28 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC7E220EE4A2600E29D28 /* WeatherData.swift */; };
@@ -85,6 +87,8 @@
 		14E9F4F220F4A0A20091A1DF /* AddLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewModel.swift; sourceTree = "<group>"; };
 		14E9F4F420F62C3A0091A1DF /* CurrentLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewModel.swift; sourceTree = "<group>"; };
 		14E9F4F620F741120091A1DF /* CLLocationManager+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationManager+Rx.swift"; sourceTree = "<group>"; };
+		14E9F4F820F889520091A1DF /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		14E9F4FC20F8D2C90091A1DF /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		14FEC7DD20EE491300E29D28 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		14FEC7E020EE49D700E29D28 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		14FEC7E220EE4A2600E29D28 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
@@ -222,6 +226,8 @@
 				14FEC81120F0A32B00E29D28 /* UserDefaults.swift */,
 				14FEC85420F383D400E29D28 /* CLLocation.swift */,
 				14E9F4F620F741120091A1DF /* CLLocationManager+Rx.swift */,
+				14E9F4F820F889520091A1DF /* Date.swift */,
+				14E9F4FC20F8D2C90091A1DF /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -751,6 +757,7 @@
 				14FEC82620F0B22E00E29D28 /* WeekWeatherDayViewModel.swift in Sources */,
 				14E9F4F520F62C3A0091A1DF /* CurrentLocationViewModel.swift in Sources */,
 				14FEC85020F3816D00E29D28 /* LocationRepresentable.swift in Sources */,
+				14E9F4FD20F8D2C90091A1DF /* UIViewController.swift in Sources */,
 				6890B8141F7CC25500ACB755 /* RootViewController.swift in Sources */,
 				14FEC7E120EE49D700E29D28 /* Location.swift in Sources */,
 				6890B8121F7CC25500ACB755 /* AppDelegate.swift in Sources */,
@@ -763,6 +770,7 @@
 				14FEC7FD20EF57C600E29D28 /* CurrentWeatherViewController.swift in Sources */,
 				14FEC81220F0A32B00E29D28 /* UserDefaults.swift in Sources */,
 				14FEC84820F3809D00E29D28 /* LocationsViewController.swift in Sources */,
+				14E9F4F920F889520091A1DF /* Date.swift in Sources */,
 				14FEC80920F07A6E00E29D28 /* WeekWeatherViewController.swift in Sources */,
 				14FEC80E20F081B700E29D28 /* ForecastData.swift in Sources */,
 				14E9F4F720F741120091A1DF /* CLLocationManager+Rx.swift in Sources */,

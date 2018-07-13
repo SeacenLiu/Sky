@@ -64,6 +64,10 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="02g-mF-0sU">
                                 <rect key="frame" x="177.5" y="117" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOt-VF-qg9">
+                                <rect key="frame" x="169" y="145.5" width="37" height="30"/>
+                                <state key="normal" title="Retry"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHO-2e-ZPV">
                                 <rect key="frame" x="8" y="116.5" width="359" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -161,10 +165,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="nHO-2e-ZPV" firstAttribute="centerX" secondItem="MR8-xd-gr6" secondAttribute="centerX" id="06H-HE-71X"/>
+                            <constraint firstItem="uOt-VF-qg9" firstAttribute="centerX" secondItem="MR8-xd-gr6" secondAttribute="centerX" id="GMa-qb-vau"/>
                             <constraint firstItem="02g-mF-0sU" firstAttribute="centerY" secondItem="MR8-xd-gr6" secondAttribute="centerY" id="N6d-wq-zEo"/>
                             <constraint firstItem="nHO-2e-ZPV" firstAttribute="centerY" secondItem="MR8-xd-gr6" secondAttribute="centerY" id="NS1-OE-Bj4"/>
                             <constraint firstItem="n0B-JD-LUd" firstAttribute="top" secondItem="MR8-xd-gr6" secondAttribute="top" id="TDH-1b-dSk"/>
                             <constraint firstItem="nHO-2e-ZPV" firstAttribute="leading" secondItem="cI8-3K-zvZ" secondAttribute="leading" constant="8" id="Vxt-XQ-H7w"/>
+                            <constraint firstItem="uOt-VF-qg9" firstAttribute="top" secondItem="nHO-2e-ZPV" secondAttribute="bottom" constant="8" id="XrU-Mg-60E"/>
                             <constraint firstAttribute="trailing" secondItem="n0B-JD-LUd" secondAttribute="trailing" id="alg-TR-glL"/>
                             <constraint firstAttribute="bottom" secondItem="n0B-JD-LUd" secondAttribute="bottom" id="dcH-9c-pyA"/>
                             <constraint firstItem="02g-mF-0sU" firstAttribute="centerX" secondItem="MR8-xd-gr6" secondAttribute="centerX" id="feu-hl-dBX"/>
@@ -178,6 +184,7 @@
                         <outlet property="humidityLabel" destination="bXZ-ZE-M2P" id="84l-B1-KUh"/>
                         <outlet property="loadingFailedLabel" destination="nHO-2e-ZPV" id="y0N-0m-hYS"/>
                         <outlet property="locationLabel" destination="qUw-Qk-hKi" id="icL-Ge-5cW"/>
+                        <outlet property="retryBtn" destination="uOt-VF-qg9" id="Cdr-UA-pg4"/>
                         <outlet property="summaryLabel" destination="9jb-Nb-pp4" id="GMY-eH-KEk"/>
                         <outlet property="temperatureLabel" destination="eax-qs-V6r" id="JTb-aq-kOf"/>
                         <outlet property="weatherContainerView" destination="n0B-JD-LUd" id="Rcm-wG-J7x"/>
