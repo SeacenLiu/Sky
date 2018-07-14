@@ -96,12 +96,8 @@ class RootViewController: UIViewController {
             .bind(to: self.currentWeatherViewController.weatherVM)
             .disposed(by: bag)
         
-        weather.map {
-            WeekWeatherViewModel(weatherData: $0.daily.data)
-            }
-            .subscribe(onNext: {
-                self.weekWeatherViewController.viewModel = $0
-            })
+        weather.map { WeekWeatherViewModel(weatherData: $0.daily.data) }
+            .bind(to: self.weekWeatherViewController.weekViewModel)
             .disposed(by: bag)
     }
     
@@ -198,6 +194,7 @@ extension RootViewController: LocationsViewControllerDelegate {
     func controller(_ controller: LocationsViewController, didSelectLocation location: CLLocation) {
         currentWeatherViewController.weatherVM.accept(.empty)
         currentWeatherViewController.locationVM.accept(.empty)
+        weekWeatherViewController.weekViewModel.accept(.empty)
         currentLocation = location
     }
 }

@@ -14,6 +14,20 @@ struct ForecastData: Codable {
     let temperatureHigh: Double
     let icon: String
     let humidity: Double
+    
+    static let invalid = ForecastData(
+        time: Date.from(string: "1970-01-01"),
+        temperatureLow: 0,
+        temperatureHigh: 0,
+        icon: "n/a",
+        humidity: 0)
+    
+    static let empty = ForecastData(
+        time: Date.from(string: "1970-01-01"),
+        temperatureLow: 0,
+        temperatureHigh: 0,
+        icon: "",
+        humidity: 0)
 }
 
 extension ForecastData: Equatable {

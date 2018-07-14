@@ -61,19 +61,16 @@ class CurrentWeatherViewController: WeatherViewController {
         viewModel.map { $0.0.city }.drive(self.locationLabel.rx.text).disposed(by: bag)
         viewModel.map { $0.1.date }.drive(self.dateLabel.rx.text).disposed(by: bag)
         
-        //        combined.map { return $0.0.isEmpty || $0.1.isEmpty || $0.0.isInvalid || $0.1.isInvalid }
         combined.map { self.shouldHideWeatherContainer(locationVM: $0.0, weatherVM: $0.1) }
             .asDriver(onErrorJustReturn: true)
             .drive(self.weatherContainerView.rx.isHidden)
             .disposed(by: bag)
         
-        //        combined.map { (!$0.0.isEmpty && !$0.1.isEmpty) || ($0.0.isInvalid || $0.1.isInvalid) }
         combined.map { self.shouldHideActivityIndicator(locationVM: $0.0, weatherVM: $0.1) }
             .asDriver(onErrorJustReturn: false)
             .drive(self.activityIndicatorView.rx.isHidden)
             .disposed(by: bag)
         
-        //        combined.map { $0.0.isEmpty || $0.1.isEmpty }
         combined.map { self.shouldAnimateActivityIndicator(locationVM: $0.0, weatherVM: $0.1) }
             .asDriver(onErrorJustReturn: true)
             .drive(self.activityIndicatorView.rx.isAnimating)
@@ -84,7 +81,7 @@ class CurrentWeatherViewController: WeatherViewController {
         
         errorCond.map { !$0 }.drive(self.retryBtn.rx.isHidden).disposed(by: bag)
         errorCond.map { !$0 }.drive(self.loadingFailedLabel.rx.isHidden).disposed(by: bag)
-        errorCond.map { _ in return "Opps! network/location error" }.drive(self.loadingFailedLabel.rx.text).disposed(by: bag)
+        errorCond.map { _ in return "Opps! Load Location/Weather failed!" }.drive(self.loadingFailedLabel.rx.text).disposed(by: bag)
         
         self.retryBtn.rx.tap.subscribe(onNext: { _ in
             self.weatherVM.accept(.empty)
