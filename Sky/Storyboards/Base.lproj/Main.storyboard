@@ -426,7 +426,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="381"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeekWeatherCell" rowHeight="104" id="Mnj-Z3-VcP" customClass="WeakWeatherTableViewCell" customModule="Sky" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeekWeatherCell" rowHeight="104" id="Mnj-Z3-VcP" customClass="WeekWeatherTableViewCell" customModule="Sky" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="104"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mnj-Z3-VcP" id="8kr-cP-5tA">
@@ -484,17 +484,14 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="date" destination="BFd-ye-e9e" id="6yo-Sl-KIX"/>
-                                                    <outlet property="humid" destination="Hqf-H3-fd9" id="pkb-bu-6lV"/>
-                                                    <outlet property="temperature" destination="Olw-52-sPL" id="5Ik-Ki-ag6"/>
-                                                    <outlet property="weatherIcon" destination="lbl-iF-zKW" id="J7l-Ax-Ny9"/>
-                                                    <outlet property="week" destination="NQn-oa-mRE" id="6sY-6M-bo0"/>
+                                                    <outlet property="date" destination="BFd-ye-e9e" id="OWf-qi-WRh"/>
+                                                    <outlet property="humid" destination="Hqf-H3-fd9" id="XQr-ad-0QH"/>
+                                                    <outlet property="temperature" destination="Olw-52-sPL" id="eRO-5F-IqZ"/>
+                                                    <outlet property="weatherIcon" destination="lbl-iF-zKW" id="F8R-D7-nDt"/>
+                                                    <outlet property="week" destination="NQn-oa-mRE" id="x69-vZ-WWv"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
-                                        <connections>
-                                            <outlet property="dataSource" destination="lRt-HA-ltP" id="rjq-Vn-9V8"/>
-                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -524,7 +521,7 @@
                         <outlet property="activityIndicatorView" destination="GIU-G1-DiZ" id="LL0-p2-Ufc"/>
                         <outlet property="loadingFailedLabel" destination="BnP-0N-P1N" id="cXf-tf-Qxf"/>
                         <outlet property="weatherContainerView" destination="3Fg-He-48n" id="us0-Xe-XV2"/>
-                        <outlet property="weekWeatherTableView" destination="xKs-gI-Hgz" id="x8c-BX-YCf"/>
+                        <outlet property="weekWeatherTableView" destination="xKs-gI-Hgz" id="0Xo-0s-lqV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1R-QP-fPU" userLabel="First Responder" sceneMemberID="firstResponder"/>

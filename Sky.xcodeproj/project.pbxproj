@@ -27,7 +27,7 @@
 		14FEC80520EF99CA00E29D28 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC80420EF99CA00E29D28 /* UIImage.swift */; };
 		14FEC80720EFA2F800E29D28 /* CurrentWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC80620EFA2F800E29D28 /* CurrentWeatherUITests.swift */; };
 		14FEC80920F07A6E00E29D28 /* WeekWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC80820F07A6E00E29D28 /* WeekWeatherViewController.swift */; };
-		14FEC80C20F07D0C00E29D28 /* WeakWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC80B20F07D0C00E29D28 /* WeakWeatherTableViewCell.swift */; };
+		14FEC80C20F07D0C00E29D28 /* WeekWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC80B20F07D0C00E29D28 /* WeekWeatherTableViewCell.swift */; };
 		14FEC80E20F081B700E29D28 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC80D20F081B700E29D28 /* ForecastData.swift */; };
 		14FEC81020F081FF00E29D28 /* WeekWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC80F20F081FF00E29D28 /* WeekWeatherViewModel.swift */; };
 		14FEC81220F0A32B00E29D28 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14FEC81120F0A32B00E29D28 /* UserDefaults.swift */; };
@@ -104,7 +104,7 @@
 		14FEC80420EF99CA00E29D28 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		14FEC80620EFA2F800E29D28 /* CurrentWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherUITests.swift; sourceTree = "<group>"; };
 		14FEC80820F07A6E00E29D28 /* WeekWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherViewController.swift; sourceTree = "<group>"; };
-		14FEC80B20F07D0C00E29D28 /* WeakWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakWeatherTableViewCell.swift; sourceTree = "<group>"; };
+		14FEC80B20F07D0C00E29D28 /* WeekWeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherTableViewCell.swift; sourceTree = "<group>"; };
 		14FEC80D20F081B700E29D28 /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
 		14FEC80F20F081FF00E29D28 /* WeekWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWeatherViewModel.swift; sourceTree = "<group>"; };
 		14FEC81120F0A32B00E29D28 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -267,7 +267,7 @@
 		14FEC80A20F07CB100E29D28 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				14FEC80B20F07D0C00E29D28 /* WeakWeatherTableViewCell.swift */,
+				14FEC80B20F07D0C00E29D28 /* WeekWeatherTableViewCell.swift */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -700,12 +700,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Sky/Pods-Sky-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,7 +765,7 @@
 				6890B8141F7CC25500ACB755 /* RootViewController.swift in Sources */,
 				14FEC7E120EE49D700E29D28 /* Location.swift in Sources */,
 				6890B8121F7CC25500ACB755 /* AppDelegate.swift in Sources */,
-				14FEC80C20F07D0C00E29D28 /* WeakWeatherTableViewCell.swift in Sources */,
+				14FEC80C20F07D0C00E29D28 /* WeekWeatherTableViewCell.swift in Sources */,
 				14FEC82420F0ADD700E29D28 /* SettingsContent.swift in Sources */,
 				14FEC82920F0B2AA00E29D28 /* WeekWeatherDayRepresentable.swift in Sources */,
 				14FEC82120F0ABBC00E29D28 /* SettingsTemperatureViewModel.swift in Sources */,

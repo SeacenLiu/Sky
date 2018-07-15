@@ -9,10 +9,23 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import RxDataSources
 
 class WeekWeatherViewController: WeatherViewController {
     
     @IBOutlet weak var weekWeatherTableView: UITableView!
+    
+    typealias SectionTableModel = SectionModel<String, WeekWeatherDayViewModel>
+    let dataSource = RxTableViewSectionedReloadDataSource<SectionTableModel>(configureCell: {
+        (_, tableView, indexPath, element) -> WeekWeatherTableViewCell in
+        let cell = tableView.dequeueReusableCell(withIdentifier: WeekWeatherTableViewCell.reuseIdentifier, for: indexPath) as?
+        WeekWeatherTableViewCell
+        guard let row = cell else {
+            fatalError("cell error")
+        }
+        row.configure(with: element)
+        return row
+    })
     
     private var bag = DisposeBag()
     
@@ -55,9 +68,8 @@ class WeekWeatherViewController: WeatherViewController {
         
         viewModel
             .filter { self.shouldDisplayWeekWeatherContainer(weekVM: $0) }
-            .drive(onNext: { _ in
-                self.weekWeatherTableView.reloadData()
-            })
+            .map { self.createWeekSectionModel(weekVM: $0) }
+            .drive(self.weekWeatherTableView.rx.items(dataSource: self.dataSource))
             .disposed(by: bag)
         
         let errorVM = viewModel
@@ -75,29 +87,20 @@ class WeekWeatherViewController: WeatherViewController {
         
     }
     
-}
-
-extension WeekWeatherViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return weekViewModel.value.numberOfSections
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weekViewModel.value.numberOfDays
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: WeakWeatherTableViewCell.reuseIdentifier, for: indexPath) as? WeakWeatherTableViewCell
+    private func createWeekSectionModel(weekVM: WeekWeatherViewModel) -> [SectionTableModel] {
+        var ret: [SectionTableModel] = []
+        var items: [WeekWeatherDayViewModel] = []
         
-        guard let row = cell else {
-            fatalError("Unexpected table view cell.")
+        weekVM.weatherData.forEach {
+            items.append(WeekWeatherDayViewModel(weatherData: $0))
         }
         
-        row.configure(with: weekViewModel.value.viewModel(for: indexPath.row))
+        let tableModel = SectionTableModel(model: "", items: items)
+        ret.append(tableModel)
         
-        return row
+        return ret
     }
+    
 }
 
 fileprivate extension WeekWeatherViewController {

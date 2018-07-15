@@ -1,5 +1,5 @@
 //
-//  WeakWeatherTableViewCell.swift
+//  WeekWeatherTableViewCell.swift
 //  Sky
 //
 //  Created by SeacenLiu on 2018/7/7.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WeakWeatherTableViewCell: UITableViewCell {
+class WeekWeatherTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "WeekWeatherCell"
     

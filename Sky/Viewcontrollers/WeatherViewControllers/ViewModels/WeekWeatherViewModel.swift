@@ -23,14 +23,6 @@ struct WeekWeatherViewModel {
         return self == WeekWeatherViewModel.invalid
     }
     
-    var numberOfSections: Int {
-        return 1
-    }
-    
-    var numberOfDays: Int {
-        return weatherData.count
-    }
-    
     func viewModel(for index: Int) -> WeekWeatherDayViewModel {
         return WeekWeatherDayViewModel(weatherData: weatherData[index])
     }
