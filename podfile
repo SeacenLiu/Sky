@@ -8,7 +8,6 @@ target 'Sky' do
   # Pods for Sky
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'RxDataSources'
 
   target 'SkyTests' do
     inherit! :search_paths

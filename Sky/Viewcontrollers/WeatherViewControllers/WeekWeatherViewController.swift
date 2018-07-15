@@ -9,23 +9,10 @@
 import UIKit
 import RxCocoa
 import RxSwift
-import RxDataSources
 
 class WeekWeatherViewController: WeatherViewController {
     
     @IBOutlet weak var weekWeatherTableView: UITableView!
-    
-    typealias SectionTableModel = SectionModel<String, WeekWeatherDayViewModel>
-    let dataSource = RxTableViewSectionedReloadDataSource<SectionTableModel>(configureCell: {
-        (_, tableView, indexPath, element) -> WeekWeatherTableViewCell in
-        let cell = tableView.dequeueReusableCell(withIdentifier: WeekWeatherTableViewCell.reuseIdentifier, for: indexPath) as?
-        WeekWeatherTableViewCell
-        guard let row = cell else {
-            fatalError("cell error")
-        }
-        row.configure(with: element)
-        return row
-    })
     
     private var bag = DisposeBag()
     
@@ -68,9 +55,10 @@ class WeekWeatherViewController: WeatherViewController {
         
         viewModel
             .filter { self.shouldDisplayWeekWeatherContainer(weekVM: $0) }
-            .map { self.createWeekSectionModel(weekVM: $0) }
-            .drive(self.weekWeatherTableView.rx.items(dataSource: self.dataSource))
-            .disposed(by: bag)
+            .map { $0.weatherData }
+            .drive(self.weekWeatherTableView.rx.items(cellIdentifier: WeekWeatherTableViewCell.reuseIdentifier, cellType: WeekWeatherTableViewCell.self)) { (row, element, cell) in
+                cell.configure(with: WeekWeatherDayViewModel(weatherData: element))
+            }.disposed(by: bag)
         
         let errorVM = viewModel
             .filter { self.shouldDisplayErrorPrompt(weekVM: $0) }
@@ -85,20 +73,12 @@ class WeekWeatherViewController: WeatherViewController {
             .drive(loadingFailedLabel.rx.isHidden)
             .disposed(by: bag)
         
-    }
-    
-    private func createWeekSectionModel(weekVM: WeekWeatherViewModel) -> [SectionTableModel] {
-        var ret: [SectionTableModel] = []
-        var items: [WeekWeatherDayViewModel] = []
+        weekWeatherTableView.rx.itemSelected
+            .subscribe(onNext: {indexPath in
+            self.weekWeatherTableView.deselectRow(at: indexPath, animated: true)
+        })
+            .disposed(by: bag)
         
-        weekVM.weatherData.forEach {
-            items.append(WeekWeatherDayViewModel(weatherData: $0))
-        }
-        
-        let tableModel = SectionTableModel(model: "", items: items)
-        ret.append(tableModel)
-        
-        return ret
     }
     
 }
